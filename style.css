@@ -12,6 +12,13 @@ body {
   margin: 0px;
 }
 
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 p {
   box-sizing: border-box;
   padding: 10px;
