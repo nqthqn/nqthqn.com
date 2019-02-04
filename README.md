@@ -1,2 +1,3 @@
-# nqthqn.github.io
-# nqthqn.github.io
+# nqthqn.com
+
+This is my personal website :) Enjoy.

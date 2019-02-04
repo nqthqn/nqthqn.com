@@ -7,6 +7,7 @@ body {
   display: flex;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 2em;
+  line-height: 1.2em;
   height: 100vh;
   justify-content: center;
   margin: 0px;
@@ -14,14 +15,16 @@ body {
 
 @media (max-width: 600px) {
   body {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
+    font-size: 1.5em;
   }
 }
 
 p {
   box-sizing: border-box;
   padding: 10px;
+  max-width: 700px;
 }
 a {
   background:
@@ -37,4 +40,13 @@ a {
 
 a:hover {
   background-size: 4px 50px;
+}
+
+p em {
+  font-size: .5em;
+  color: #888;
+}
+
+p strong {
+  font-family: Georgia, serif;
 }
