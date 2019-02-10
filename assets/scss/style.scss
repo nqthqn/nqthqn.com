@@ -11,57 +11,55 @@ body {
     height: 100vh;
     margin: 0px;
     text-rendering: optimizeLegibility;
+
+    @media (max-width: 600px) {
+        font-size: 1.5em;
+    }
 }
 
 header {
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 100vh;
-}
+    // height: 100vh;
 
-@media (max-width: 600px) {
-    header {
+    @media (max-width: 600px) {
         flex-direction: column-reverse;
         text-align: center;
     }
 
-    body {
-        font-size: 1.5em;
+
+    p {
+        box-sizing: border-box;
+        padding: 10px;
+        max-width: 700px;
+    }
+
+    em {
+        font-size: .5em;
+        color: #888;
+    }
+
+    strong {
+        font-family: var(--font2);
+    }
+
+    a {
+        background:
+            linear-gradient(to bottom, var(--theme) 0%,
+            var(--theme) 100%);
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 4px 4px;
+        color: #000;
+        text-decoration: none;
+        transition: background-size .2s;
+    }
+
+    a:hover {
+        background-size: 4px 50px;
     }
 }
-
-p {
-    box-sizing: border-box;
-    padding: 10px;
-    max-width: 700px;
-}
-
-em {
-    font-size: .5em;
-    color: #888;
-}
-
-strong {
-    font-family: var(--font2);
-}
-
-a {
-    background:
-        linear-gradient(to bottom, var(--theme) 0%,
-        var(--theme) 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 4px 4px;
-    color: #000;
-    text-decoration: none;
-    transition: background-size .2s;
-}
-
-a:hover {
-    background-size: 4px 50px;
-}
-
 
 
 /* Cool list! */
@@ -116,18 +114,4 @@ li {
 
 li {
     margin-bottom: .5em
-}
-
-main {
-    max-width: 900px;
-    padding: 16px;
-    margin: 0 auto;
-}
-
-main p {
-    font-size: 1em;
-}
-
-main h1 {
-    font-family: var(--font2);
 }
