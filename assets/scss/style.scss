@@ -16,12 +16,24 @@ body {
         font-size: 1.5em;
     }
 }
-
+main {
+    justify-content: center;
+    display: flex;
+    background: #efefef;
+    padding: 16px;
+    article {
+        max-width: 1000px;
+        color: #111;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: var(--font1);
+    }
+}
 header {
     align-items: center;
     display: flex;
     justify-content: center;
-    // height: 100vh;
+    height: 100vh;
 
     @media (max-width: 600px) {
         flex-direction: column-reverse;
@@ -32,7 +44,7 @@ header {
     p {
         box-sizing: border-box;
         padding: 10px;
-        max-width: 700px;
+        max-width: 800px;
     }
 
     em {
