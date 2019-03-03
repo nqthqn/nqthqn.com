@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NQTHQN</title>
     
-    {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
+    {{ $style := resources.Get "scss/style.css" }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     
 
