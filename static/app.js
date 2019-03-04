@@ -4977,6 +4977,7 @@ var author$project$Shared$AddExpense = {$: 'AddExpense'};
 var author$project$Shared$Daily = {$: 'Daily'};
 var author$project$Shared$Final = {$: 'Final'};
 var author$project$Shared$Settings = {$: 'Settings'};
+var elm$core$Debug$log = _Debug_log;
 var elm$json$Json$Decode$andThen = _Json_andThen;
 var elm$json$Json$Decode$string = _Json_decodeString;
 var author$project$Shared$currentPageDecoder = A2(
@@ -4995,6 +4996,7 @@ var author$project$Shared$currentPageDecoder = A2(
 				return elm$json$Json$Decode$succeed(author$project$Shared$Settings);
 			default:
 				var currentPage = str;
+				var _n1 = A2(elm$core$Debug$log, 'wrong page', currentPage);
 				return elm$json$Json$Decode$succeed(author$project$Shared$Begin);
 		}
 	},
@@ -5029,7 +5031,6 @@ var author$project$Shared$modelDecoder = A3(
 							'totalBudget',
 							elm$json$Json$Decode$float,
 							elm$json$Json$Decode$succeed(author$project$Shared$Model))))))));
-var elm$core$Debug$log = _Debug_log;
 var elm$core$Platform$Cmd$batch = _Platform_batch;
 var elm$core$Platform$Cmd$none = elm$core$Platform$Cmd$batch(_List_Nil);
 var elm$core$Basics$identity = function (x) {
@@ -5950,6 +5951,217 @@ var author$project$Days$trickle = F2(
 			},
 			days) : days;
 	});
+var elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
+var elm$core$Maybe$map = F2(
+	function (f, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return elm$core$Maybe$Just(
+				f(value));
+		} else {
+			return elm$core$Maybe$Nothing;
+		}
+	});
+var elm$core$List$takeReverse = F3(
+	function (n, list, kept) {
+		takeReverse:
+		while (true) {
+			if (n <= 0) {
+				return kept;
+			} else {
+				if (!list.b) {
+					return kept;
+				} else {
+					var x = list.a;
+					var xs = list.b;
+					var $temp$n = n - 1,
+						$temp$list = xs,
+						$temp$kept = A2(elm$core$List$cons, x, kept);
+					n = $temp$n;
+					list = $temp$list;
+					kept = $temp$kept;
+					continue takeReverse;
+				}
+			}
+		}
+	});
+var elm$core$List$takeTailRec = F2(
+	function (n, list) {
+		return elm$core$List$reverse(
+			A3(elm$core$List$takeReverse, n, list, _List_Nil));
+	});
+var elm$core$List$takeFast = F3(
+	function (ctr, n, list) {
+		if (n <= 0) {
+			return _List_Nil;
+		} else {
+			var _n0 = _Utils_Tuple2(n, list);
+			_n0$1:
+			while (true) {
+				_n0$5:
+				while (true) {
+					if (!_n0.b.b) {
+						return list;
+					} else {
+						if (_n0.b.b.b) {
+							switch (_n0.a) {
+								case 1:
+									break _n0$1;
+								case 2:
+									var _n2 = _n0.b;
+									var x = _n2.a;
+									var _n3 = _n2.b;
+									var y = _n3.a;
+									return _List_fromArray(
+										[x, y]);
+								case 3:
+									if (_n0.b.b.b.b) {
+										var _n4 = _n0.b;
+										var x = _n4.a;
+										var _n5 = _n4.b;
+										var y = _n5.a;
+										var _n6 = _n5.b;
+										var z = _n6.a;
+										return _List_fromArray(
+											[x, y, z]);
+									} else {
+										break _n0$5;
+									}
+								default:
+									if (_n0.b.b.b.b && _n0.b.b.b.b.b) {
+										var _n7 = _n0.b;
+										var x = _n7.a;
+										var _n8 = _n7.b;
+										var y = _n8.a;
+										var _n9 = _n8.b;
+										var z = _n9.a;
+										var _n10 = _n9.b;
+										var w = _n10.a;
+										var tl = _n10.b;
+										return (ctr > 1000) ? A2(
+											elm$core$List$cons,
+											x,
+											A2(
+												elm$core$List$cons,
+												y,
+												A2(
+													elm$core$List$cons,
+													z,
+													A2(
+														elm$core$List$cons,
+														w,
+														A2(elm$core$List$takeTailRec, n - 4, tl))))) : A2(
+											elm$core$List$cons,
+											x,
+											A2(
+												elm$core$List$cons,
+												y,
+												A2(
+													elm$core$List$cons,
+													z,
+													A2(
+														elm$core$List$cons,
+														w,
+														A3(elm$core$List$takeFast, ctr + 1, n - 4, tl)))));
+									} else {
+										break _n0$5;
+									}
+							}
+						} else {
+							if (_n0.a === 1) {
+								break _n0$1;
+							} else {
+								break _n0$5;
+							}
+						}
+					}
+				}
+				return list;
+			}
+			var _n1 = _n0.b;
+			var x = _n1.a;
+			return _List_fromArray(
+				[x]);
+		}
+	});
+var elm$core$List$take = F2(
+	function (n, list) {
+		return A3(elm$core$List$takeFast, 0, n, list);
+	});
+var miyamoen$select_list$Select$splitAt = F2(
+	function (n, list) {
+		var _n0 = _Utils_Tuple2(
+			A2(elm$core$List$take, n - 1, list),
+			A2(elm$core$List$drop, n - 1, list));
+		var before = _n0.a;
+		var rest = _n0.b;
+		if (rest.b) {
+			var a = rest.a;
+			var after = rest.b;
+			return elm$core$Maybe$Just(
+				_Utils_Tuple3(before, a, after));
+		} else {
+			return elm$core$Maybe$Nothing;
+		}
+	});
+var miyamoen$select_list$Types$reverseAppend = F2(
+	function (xs, ys) {
+		return A3(elm$core$List$foldl, elm$core$List$cons, ys, xs);
+	});
+var miyamoen$select_list$Select$by = F2(
+	function (n, _n0) {
+		var before = _n0.a;
+		var a = _n0.b;
+		var after = _n0.c;
+		return (n > 0) ? A2(
+			elm$core$Maybe$map,
+			function (_n1) {
+				var nextBefore = _n1.a;
+				var next = _n1.b;
+				var nextAfter = _n1.c;
+				return A3(
+					miyamoen$select_list$Types$SelectList,
+					A2(
+						miyamoen$select_list$Types$reverseAppend,
+						nextBefore,
+						A2(elm$core$List$cons, a, before)),
+					next,
+					nextAfter);
+			},
+			A2(miyamoen$select_list$Select$splitAt, n, after)) : ((n < 0) ? A2(
+			elm$core$Maybe$map,
+			function (_n2) {
+				var nextAfter = _n2.a;
+				var next = _n2.b;
+				var nextBefore = _n2.c;
+				return A3(
+					miyamoen$select_list$Types$SelectList,
+					nextBefore,
+					next,
+					A2(
+						miyamoen$select_list$Types$reverseAppend,
+						nextAfter,
+						A2(elm$core$List$cons, a, after)));
+			},
+			A2(miyamoen$select_list$Select$splitAt, -n, before)) : elm$core$Maybe$Just(
+			A3(miyamoen$select_list$Types$SelectList, before, a, after)));
+	});
+var miyamoen$select_list$SelectList$selectBy = miyamoen$select_list$Select$by;
+var author$project$Days$trySelect = F2(
+	function (num, days) {
+		return A2(
+			elm$core$Maybe$withDefault,
+			days,
+			A2(miyamoen$select_list$SelectList$selectBy, num, days));
+	});
 var author$project$Main$setStorage = _Platform_outgoingPort('setStorage', elm$core$Basics$identity);
 var elm$json$Json$Encode$float = _Json_wrap;
 var elm$json$Json$Encode$list = F2(
@@ -6151,13 +6363,16 @@ var author$project$Main$update = F2(
 					return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
 				} else {
 					var now = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(currTime);
-					var newDays = A2(author$project$Days$trickle, model.totalBudget / model.totalDays, model.days);
 					var began = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(
 						elm$time$Time$millisToPosix(model.startTime));
 					var numDaysBetween = A2(
 						elm$core$Debug$log,
 						'numDaysBetween',
 						A2(PanagiotisGeorgiadis$elm_datetime$DateTime$getDayDiff, began, now));
+					var newDays = A2(
+						author$project$Days$trySelect,
+						numDaysBetween,
+						A2(author$project$Days$trickle, model.totalBudget / model.totalDays, model.days));
 					var savings = (!numDaysBetween) ? 0 : author$project$Days$savings(model.days);
 					return author$project$Main$saveToLocalStorage(
 						_Utils_update(
@@ -6246,41 +6461,39 @@ var elm$html$Html$Events$onInput = function (tagger) {
 			elm$html$Html$Events$alwaysStop,
 			A2(elm$json$Json$Decode$map, tagger, elm$html$Html$Events$targetValue)));
 };
-var author$project$Ui$pageAddExpense = function (model) {
-	return A2(
-		elm$html$Html$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				A2(
-				elm$html$Html$h3,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('Whaddya spend?')
-					])),
-				A2(
-				elm$html$Html$input,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onInput(author$project$Shared$InputSpend),
-						elm$html$Html$Attributes$placeholder('$5')
-					]),
-				_List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$button,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onClick(author$project$Shared$ClickOk)
-					]),
-				_List_fromArray(
-					[
-						elm$html$Html$text('👌 Ok')
-					]))
-			]));
-};
+var author$project$Ui$pageAddExpense = A2(
+	elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			elm$html$Html$h3,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Add transaction')
+				])),
+			A2(
+			elm$html$Html$input,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onInput(author$project$Shared$InputSpend),
+					elm$html$Html$Attributes$placeholder('$5')
+				]),
+			_List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(
+			elm$html$Html$button,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onClick(author$project$Shared$ClickOk)
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('👌 Ok')
+				]))
+		]));
 var author$project$Shared$ClickBegin = {$: 'ClickBegin'};
 var author$project$Shared$InputBudget = function (a) {
 	return {$: 'InputBudget', a: a};
@@ -6288,65 +6501,63 @@ var author$project$Shared$InputBudget = function (a) {
 var author$project$Shared$InputTotalDays = function (a) {
 	return {$: 'InputTotalDays', a: a};
 };
-var author$project$Ui$pageBegin = function (model) {
-	return A2(
-		elm$html$Html$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				A2(
-				elm$html$Html$h3,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('How much do you have to spend?')
-					])),
-				A2(
-				elm$html$Html$input,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onInput(author$project$Shared$InputBudget),
-						elm$html$Html$Attributes$placeholder('$100')
-					]),
-				_List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$h3,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('How many days should it last?')
-					])),
-				A2(
-				elm$html$Html$input,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onInput(author$project$Shared$InputTotalDays),
-						elm$html$Html$Attributes$placeholder('5 days')
-					]),
-				_List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$button,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onClick(author$project$Shared$ClickBegin)
-					]),
-				_List_fromArray(
-					[
-						elm$html$Html$text('🏃 Let\'s Commit!')
-					]))
-			]));
-};
+var author$project$Ui$pageBegin = A2(
+	elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			elm$html$Html$h3,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('How much do you have to spend?')
+				])),
+			A2(
+			elm$html$Html$input,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onInput(author$project$Shared$InputBudget),
+					elm$html$Html$Attributes$placeholder('$100')
+				]),
+			_List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(
+			elm$html$Html$h3,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('How many days should it last?')
+				])),
+			A2(
+			elm$html$Html$input,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onInput(author$project$Shared$InputTotalDays),
+					elm$html$Html$Attributes$placeholder('5 days')
+				]),
+			_List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(
+			elm$html$Html$button,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onClick(author$project$Shared$ClickBegin)
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('🏃 Let\'s Commit!')
+				]))
+		]));
 var author$project$Days$daysLeft = function (days) {
 	return function (n) {
 		if (n === 1) {
-			return '1 day left';
+			return '1 day remaining';
 		} else {
-			return elm$core$String$fromInt(n) + ' days left';
+			return elm$core$String$fromInt(n) + ' days to go';
 		}
 	}(
 		author$project$Days$numDaysAfter(days));
@@ -6361,35 +6572,30 @@ var author$project$Days$toRecord = function (days) {
 		selected: miyamoen$select_list$SelectList$selected(days)
 	};
 };
-var elm$html$Html$li = _VirtualDom_node('li');
-var elm$html$Html$p = _VirtualDom_node('p');
-var elm$html$Html$ul = _VirtualDom_node('ul');
-var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
-var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
+var elm$core$List$head = function (list) {
+	if (list.b) {
+		var x = list.a;
+		var xs = list.b;
+		return elm$core$Maybe$Just(x);
+	} else {
+		return elm$core$Maybe$Nothing;
+	}
+};
+var author$project$Days$tomorrowsAllowance = function (days) {
+	return A2(
+		elm$core$Maybe$map,
+		function ($) {
+			return $.allowance;
+		},
+		elm$core$List$head(
+			miyamoen$select_list$SelectList$listAfter(days)));
+};
+var elm$html$Html$strong = _VirtualDom_node('strong');
 var elm$core$Basics$abs = function (n) {
 	return (n < 0) ? (-n) : n;
 };
 var elm$core$Basics$isInfinite = _Basics_isInfinite;
 var elm$core$Basics$isNaN = _Basics_isNaN;
-var elm$core$Maybe$map = F2(
-	function (f, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return elm$core$Maybe$Just(
-				f(value));
-		} else {
-			return elm$core$Maybe$Nothing;
-		}
-	});
-var elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
-	});
 var elm$core$String$fromFloat = _String_fromNumber;
 var elm$core$String$length = _String_length;
 var elm$core$String$cons = _String_cons;
@@ -6655,6 +6861,21 @@ var myrho$elm_round$Round$round = myrho$elm_round$Round$roundFun(
 				}
 			}
 		}));
+var author$project$Ui$number = function (num) {
+	return A2(
+		elm$html$Html$strong,
+		_List_Nil,
+		_List_fromArray(
+			[
+				elm$html$Html$text(
+				'$' + A2(myrho$elm_round$Round$round, 2, num))
+			]));
+};
+var elm$html$Html$li = _VirtualDom_node('li');
+var elm$html$Html$p = _VirtualDom_node('p');
+var elm$html$Html$ul = _VirtualDom_node('ul');
+var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
 var author$project$Ui$daysView = function (days) {
 	var days_ = author$project$Days$toRecord(days);
 	return A2(
@@ -6672,7 +6893,7 @@ var author$project$Ui$daysView = function (days) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						elm$html$Html$text('Todays Transactions')
+						elm$html$Html$text('Transactions')
 					])),
 				A2(
 				elm$html$Html$ul,
@@ -6685,38 +6906,34 @@ var author$project$Ui$daysView = function (days) {
 							_List_Nil,
 							_List_fromArray(
 								[
-									elm$html$Html$text(
-									'$' + A2(myrho$elm_round$Round$round, 2, t))
+									author$project$Ui$number(t)
 								]));
 					},
 					function ($) {
 						return $.selected;
 					}(days_).transactions)),
-				A2(
-				elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('Future Daily Allowances')
-					])),
-				A2(
-				elm$html$Html$ul,
-				_List_Nil,
-				A2(
-					elm$core$List$map,
-					function (day) {
-						return A2(
-							elm$html$Html$li,
-							_List_Nil,
-							_List_fromArray(
-								[
-									elm$html$Html$text(
-									'$' + A2(myrho$elm_round$Round$round, 2, day.allowance))
-								]));
-					},
-					function ($) {
-						return $.after;
-					}(days_)))
+				function () {
+				var _n0 = author$project$Days$tomorrowsAllowance(days);
+				if (_n0.$ === 'Just') {
+					var allowance = _n0.a;
+					return A2(
+						elm$html$Html$p,
+						_List_Nil,
+						_List_fromArray(
+							[
+								elm$html$Html$text('Tomorrow: '),
+								author$project$Ui$number(allowance)
+							]));
+				} else {
+					return A2(
+						elm$html$Html$p,
+						_List_Nil,
+						_List_fromArray(
+							[
+								elm$html$Html$text('')
+							]));
+				}
+			}()
 			]));
 };
 var elm$html$Html$h1 = _VirtualDom_node('h1');
@@ -6732,7 +6949,7 @@ var author$project$Ui$pageDaily = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						elm$html$Html$text('Current Balance')
+						elm$html$Html$text('Balance')
 					])),
 				A2(
 				elm$html$Html$h1,
@@ -6757,12 +6974,21 @@ var author$project$Ui$pageDaily = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						elm$html$Html$text(
-						'You have ' + author$project$Days$daysLeft(model.days)),
-						elm$html$Html$text(
-						' and $' + (A2(myrho$elm_round$Round$round, 2, model.totalSavings) + ' saved so far')),
-						elm$html$Html$text(
-						' with a target daily allowance of ' + ('$' + (A2(myrho$elm_round$Round$round, 2, model.totalBudget / model.totalDays) + '...')))
+						elm$html$Html$text('You have '),
+						A2(
+						elm$html$Html$strong,
+						_List_Nil,
+						_List_fromArray(
+							[
+								elm$html$Html$text(
+								author$project$Days$daysLeft(model.days))
+							])),
+						elm$html$Html$text(' and '),
+						author$project$Ui$number(model.totalSavings),
+						elm$html$Html$text(' saved so far'),
+						elm$html$Html$text(' with a target daily allowance of '),
+						author$project$Ui$number(model.totalBudget / model.totalDays),
+						elm$html$Html$text('.')
 					])),
 				A2(
 				elm$html$Html$button,
@@ -6789,7 +7015,7 @@ var author$project$Ui$pageDaily = function (model) {
 					]),
 				_List_fromArray(
 					[
-						elm$html$Html$text('⚙Settings')
+						elm$html$Html$text('⚙ Settings')
 					]))
 			]));
 };
@@ -6827,68 +7053,64 @@ var author$project$Ui$pageFinal = function (model) {
 					]))
 			]));
 };
-var author$project$Ui$pageSettings = function (model) {
-	return A2(
-		elm$html$Html$div,
-		_List_Nil,
-		_List_fromArray(
-			[
-				A2(
-				elm$html$Html$h3,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('Settings')
-					])),
-				A2(
-				elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('👋Hello! Thanks for trying out the pre-alpha release of MulaDash. We are still figuring things out. Expect MAJOR bugs. If you stay under todays allowance the remainder will roll into savings tomorrow. If you go over your daily allowance, the overage will be evenly deducted from all your future daily allowances.')
-					])),
-				A2(
-				elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('Danger! This will reset everything!')
-					])),
-				A2(
-				elm$html$Html$button,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onClick(
-						author$project$Shared$GotoPage(author$project$Shared$Daily))
-					]),
-				_List_fromArray(
-					[
-						elm$html$Html$text('← Back to safety')
-					])),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(elm$html$Html$br, _List_Nil, _List_Nil),
-				A2(
-				elm$html$Html$button,
-				_List_fromArray(
-					[
-						elm$html$Html$Events$onClick(author$project$Shared$ClickReset)
-					]),
-				_List_fromArray(
-					[
-						elm$html$Html$text('💣 Restart Everything')
-					]))
-			]));
-};
+var author$project$Ui$pageSettings = A2(
+	elm$html$Html$div,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			elm$html$Html$h3,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Settings')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('👋Hello! Thanks for trying out the pre-alpha release of Mula Dash. We are still figuring things out. Expect MAJOR bugs. If you stay under todays allowance the remainder will roll into savings tomorrow. If you go over your daily allowance, the overage will be evenly deducted from all your future daily allowances.')
+				])),
+			A2(
+			elm$html$Html$p,
+			_List_Nil,
+			_List_fromArray(
+				[
+					elm$html$Html$text('Danger! This will reset everything!')
+				])),
+			A2(
+			elm$html$Html$button,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onClick(
+					author$project$Shared$GotoPage(author$project$Shared$Daily))
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('← Back to safety')
+				])),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(elm$html$Html$br, _List_Nil, _List_Nil),
+			A2(
+			elm$html$Html$button,
+			_List_fromArray(
+				[
+					elm$html$Html$Events$onClick(author$project$Shared$ClickReset)
+				]),
+			_List_fromArray(
+				[
+					elm$html$Html$text('💣 Restart Everything')
+				]))
+		]));
 var author$project$Main$view = function (model) {
 	var _n0 = model.currentPage;
 	switch (_n0.$) {
 		case 'Begin':
 			return {
 				body: _List_fromArray(
-					[
-						author$project$Ui$pageBegin(model)
-					]),
-				title: 'MulaDash — Begin'
+					[author$project$Ui$pageBegin]),
+				title: 'Mula Dash — Begin'
 			};
 		case 'Daily':
 			return {
@@ -6896,15 +7118,13 @@ var author$project$Main$view = function (model) {
 					[
 						author$project$Ui$pageDaily(model)
 					]),
-				title: 'MulaDash — Daily'
+				title: 'Mula Dash — Daily'
 			};
 		case 'AddExpense':
 			return {
 				body: _List_fromArray(
-					[
-						author$project$Ui$pageAddExpense(model)
-					]),
-				title: 'MulaDash — Add Expense'
+					[author$project$Ui$pageAddExpense]),
+				title: 'Mula Dash — Add Expense'
 			};
 		case 'Final':
 			return {
@@ -6912,15 +7132,13 @@ var author$project$Main$view = function (model) {
 					[
 						author$project$Ui$pageFinal(model)
 					]),
-				title: 'MulaDash — All done!'
+				title: 'Mula Dash — All done!'
 			};
 		default:
 			return {
 				body: _List_fromArray(
-					[
-						author$project$Ui$pageSettings(model)
-					]),
-				title: 'MulaDash — Settings'
+					[author$project$Ui$pageSettings]),
+				title: 'Mula Dash — Settings'
 			};
 	}
 };
