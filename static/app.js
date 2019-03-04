@@ -5892,6 +5892,29 @@ var author$project$Days$addExpense = F2(
 			},
 			days);
 	});
+var miyamoen$select_list$Types$selected = function (_n0) {
+	var a = _n0.b;
+	return a;
+};
+var miyamoen$select_list$SelectList$selected = miyamoen$select_list$Types$selected;
+var author$project$Days$todaysBalance = function (days) {
+	return function (day) {
+		return day.allowance - elm$core$List$sum(day.transactions);
+	}(
+		miyamoen$select_list$SelectList$selected(days));
+};
+var author$project$Days$savings = function (days) {
+	return (author$project$Days$todaysBalance(days) > 0) ? author$project$Days$todaysBalance(days) : 0;
+};
+var miyamoen$select_list$Types$listAfter = function (_n0) {
+	var xs = _n0.c;
+	return xs;
+};
+var miyamoen$select_list$SelectList$listAfter = miyamoen$select_list$Types$listAfter;
+var author$project$Days$numDaysAfter = function (days) {
+	return elm$core$List$length(
+		miyamoen$select_list$SelectList$listAfter(days));
+};
 var elm$core$Basics$always = F2(
 	function (a, _n0) {
 		return a;
@@ -5916,248 +5939,17 @@ var author$project$Days$setFutures = F2(
 				elm$core$Basics$always(day)),
 			days);
 	});
-var miyamoen$select_list$Types$selected = function (_n0) {
-	var a = _n0.b;
-	return a;
-};
-var miyamoen$select_list$SelectList$selected = miyamoen$select_list$Types$selected;
-var author$project$Days$todaysBalance = function (days) {
-	return function (day) {
-		return day.allowance - elm$core$List$sum(day.transactions);
-	}(
-		miyamoen$select_list$SelectList$selected(days));
-};
-var elm$core$Maybe$withDefault = F2(
-	function (_default, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return value;
-		} else {
-			return _default;
-		}
-	});
-var miyamoen$select_list$Types$listAfter = function (_n0) {
-	var xs = _n0.c;
-	return xs;
-};
-var miyamoen$select_list$SelectList$listAfter = miyamoen$select_list$Types$listAfter;
-var elm$core$Maybe$map = F2(
-	function (f, maybe) {
-		if (maybe.$ === 'Just') {
-			var value = maybe.a;
-			return elm$core$Maybe$Just(
-				f(value));
-		} else {
-			return elm$core$Maybe$Nothing;
-		}
-	});
-var elm$core$List$takeReverse = F3(
-	function (n, list, kept) {
-		takeReverse:
-		while (true) {
-			if (n <= 0) {
-				return kept;
-			} else {
-				if (!list.b) {
-					return kept;
-				} else {
-					var x = list.a;
-					var xs = list.b;
-					var $temp$n = n - 1,
-						$temp$list = xs,
-						$temp$kept = A2(elm$core$List$cons, x, kept);
-					n = $temp$n;
-					list = $temp$list;
-					kept = $temp$kept;
-					continue takeReverse;
-				}
-			}
-		}
-	});
-var elm$core$List$takeTailRec = F2(
-	function (n, list) {
-		return elm$core$List$reverse(
-			A3(elm$core$List$takeReverse, n, list, _List_Nil));
-	});
-var elm$core$List$takeFast = F3(
-	function (ctr, n, list) {
-		if (n <= 0) {
-			return _List_Nil;
-		} else {
-			var _n0 = _Utils_Tuple2(n, list);
-			_n0$1:
-			while (true) {
-				_n0$5:
-				while (true) {
-					if (!_n0.b.b) {
-						return list;
-					} else {
-						if (_n0.b.b.b) {
-							switch (_n0.a) {
-								case 1:
-									break _n0$1;
-								case 2:
-									var _n2 = _n0.b;
-									var x = _n2.a;
-									var _n3 = _n2.b;
-									var y = _n3.a;
-									return _List_fromArray(
-										[x, y]);
-								case 3:
-									if (_n0.b.b.b.b) {
-										var _n4 = _n0.b;
-										var x = _n4.a;
-										var _n5 = _n4.b;
-										var y = _n5.a;
-										var _n6 = _n5.b;
-										var z = _n6.a;
-										return _List_fromArray(
-											[x, y, z]);
-									} else {
-										break _n0$5;
-									}
-								default:
-									if (_n0.b.b.b.b && _n0.b.b.b.b.b) {
-										var _n7 = _n0.b;
-										var x = _n7.a;
-										var _n8 = _n7.b;
-										var y = _n8.a;
-										var _n9 = _n8.b;
-										var z = _n9.a;
-										var _n10 = _n9.b;
-										var w = _n10.a;
-										var tl = _n10.b;
-										return (ctr > 1000) ? A2(
-											elm$core$List$cons,
-											x,
-											A2(
-												elm$core$List$cons,
-												y,
-												A2(
-													elm$core$List$cons,
-													z,
-													A2(
-														elm$core$List$cons,
-														w,
-														A2(elm$core$List$takeTailRec, n - 4, tl))))) : A2(
-											elm$core$List$cons,
-											x,
-											A2(
-												elm$core$List$cons,
-												y,
-												A2(
-													elm$core$List$cons,
-													z,
-													A2(
-														elm$core$List$cons,
-														w,
-														A3(elm$core$List$takeFast, ctr + 1, n - 4, tl)))));
-									} else {
-										break _n0$5;
-									}
-							}
-						} else {
-							if (_n0.a === 1) {
-								break _n0$1;
-							} else {
-								break _n0$5;
-							}
-						}
-					}
-				}
-				return list;
-			}
-			var _n1 = _n0.b;
-			var x = _n1.a;
-			return _List_fromArray(
-				[x]);
-		}
-	});
-var elm$core$List$take = F2(
-	function (n, list) {
-		return A3(elm$core$List$takeFast, 0, n, list);
-	});
-var miyamoen$select_list$Select$splitAt = F2(
-	function (n, list) {
-		var _n0 = _Utils_Tuple2(
-			A2(elm$core$List$take, n - 1, list),
-			A2(elm$core$List$drop, n - 1, list));
-		var before = _n0.a;
-		var rest = _n0.b;
-		if (rest.b) {
-			var a = rest.a;
-			var after = rest.b;
-			return elm$core$Maybe$Just(
-				_Utils_Tuple3(before, a, after));
-		} else {
-			return elm$core$Maybe$Nothing;
-		}
-	});
-var miyamoen$select_list$Types$reverseAppend = F2(
-	function (xs, ys) {
-		return A3(elm$core$List$foldl, elm$core$List$cons, ys, xs);
-	});
-var miyamoen$select_list$Select$by = F2(
-	function (n, _n0) {
-		var before = _n0.a;
-		var a = _n0.b;
-		var after = _n0.c;
-		return (n > 0) ? A2(
-			elm$core$Maybe$map,
-			function (_n1) {
-				var nextBefore = _n1.a;
-				var next = _n1.b;
-				var nextAfter = _n1.c;
-				return A3(
-					miyamoen$select_list$Types$SelectList,
-					A2(
-						miyamoen$select_list$Types$reverseAppend,
-						nextBefore,
-						A2(elm$core$List$cons, a, before)),
-					next,
-					nextAfter);
+var author$project$Days$trickle = F2(
+	function (targetAllowance, days) {
+		var bal = author$project$Days$todaysBalance(days);
+		return (bal < 0) ? A2(
+			author$project$Days$setFutures,
+			{
+				allowance: targetAllowance + (bal / author$project$Days$numDaysAfter(days)),
+				transactions: _List_Nil
 			},
-			A2(miyamoen$select_list$Select$splitAt, n, after)) : ((n < 0) ? A2(
-			elm$core$Maybe$map,
-			function (_n2) {
-				var nextAfter = _n2.a;
-				var next = _n2.b;
-				var nextBefore = _n2.c;
-				return A3(
-					miyamoen$select_list$Types$SelectList,
-					nextBefore,
-					next,
-					A2(
-						miyamoen$select_list$Types$reverseAppend,
-						nextAfter,
-						A2(elm$core$List$cons, a, after)));
-			},
-			A2(miyamoen$select_list$Select$splitAt, -n, before)) : elm$core$Maybe$Just(
-			A3(miyamoen$select_list$Types$SelectList, before, a, after)));
+			days) : days;
 	});
-var miyamoen$select_list$SelectList$selectBy = miyamoen$select_list$Select$by;
-var author$project$Days$computeAdvance = F2(
-	function (days, targetAllowance) {
-		var balance = author$project$Days$todaysBalance(days);
-		var newDailyAllowance = (balance < 0) ? (balance / elm$core$List$length(
-			miyamoen$select_list$SelectList$listAfter(days))) : targetAllowance;
-		return A2(
-			elm$core$Debug$log,
-			'new days',
-			A2(
-				author$project$Days$setFutures,
-				{allowance: newDailyAllowance, transactions: _List_Nil},
-				A2(
-					elm$core$Debug$log,
-					'old days',
-					A2(
-						elm$core$Maybe$withDefault,
-						days,
-						A2(miyamoen$select_list$SelectList$selectBy, 1, days)))));
-	});
-var author$project$Days$savings = function (days) {
-	return (author$project$Days$todaysBalance(days) > 0) ? author$project$Days$todaysBalance(days) : 0;
-};
 var author$project$Main$setStorage = _Platform_outgoingPort('setStorage', elm$core$Basics$identity);
 var elm$json$Json$Encode$float = _Json_wrap;
 var elm$json$Json$Encode$list = F2(
@@ -6337,7 +6129,10 @@ var author$project$Main$update = F2(
 						model,
 						{
 							currentPage: author$project$Shared$Daily,
-							days: A2(author$project$Days$addExpense, model.expense, model.days),
+							days: A2(
+								author$project$Days$trickle,
+								model.totalBudget / model.totalDays,
+								A2(author$project$Days$addExpense, model.expense, model.days)),
 							expense: 0
 						}));
 			case 'ClickReset':
@@ -6355,16 +6150,15 @@ var author$project$Main$update = F2(
 				if (!model.startTime) {
 					return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
 				} else {
-					var startTime = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(
+					var now = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(currTime);
+					var newDays = A2(author$project$Days$trickle, model.totalBudget / model.totalDays, model.days);
+					var began = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(
 						elm$time$Time$millisToPosix(model.startTime));
-					var rightNow = PanagiotisGeorgiadis$elm_datetime$DateTime$fromPosix(currTime);
-					var daysBetween = A2(
+					var numDaysBetween = A2(
 						elm$core$Debug$log,
-						'daysBetween',
-						A2(PanagiotisGeorgiadis$elm_datetime$DateTime$getDayDiff, startTime, rightNow));
-					var newDays = (daysBetween > 0) ? A2(author$project$Days$computeAdvance, model.days, model.totalBudget / model.totalDays) : model.days;
-					var newDaysLeft = A2(elm$core$Debug$log, 'newDaysLeft', model.totalDays - daysBetween);
-					var savings = (!daysBetween) ? 0 : author$project$Days$savings(model.days);
+						'numDaysBetween',
+						A2(PanagiotisGeorgiadis$elm_datetime$DateTime$getDayDiff, began, now));
+					var savings = (!numDaysBetween) ? 0 : author$project$Days$savings(model.days);
 					return author$project$Main$saveToLocalStorage(
 						_Utils_update(
 							model,
@@ -6555,8 +6349,7 @@ var author$project$Days$daysLeft = function (days) {
 			return elm$core$String$fromInt(n) + ' days left';
 		}
 	}(
-		elm$core$List$length(
-			miyamoen$select_list$SelectList$listAfter(days)));
+		author$project$Days$numDaysAfter(days));
 };
 var author$project$Shared$GotoPage = function (a) {
 	return {$: 'GotoPage', a: a};
@@ -6578,6 +6371,25 @@ var elm$core$Basics$abs = function (n) {
 };
 var elm$core$Basics$isInfinite = _Basics_isInfinite;
 var elm$core$Basics$isNaN = _Basics_isNaN;
+var elm$core$Maybe$map = F2(
+	function (f, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return elm$core$Maybe$Just(
+				f(value));
+		} else {
+			return elm$core$Maybe$Nothing;
+		}
+	});
+var elm$core$Maybe$withDefault = F2(
+	function (_default, maybe) {
+		if (maybe.$ === 'Just') {
+			var value = maybe.a;
+			return value;
+		} else {
+			return _default;
+		}
+	});
 var elm$core$String$fromFloat = _String_fromNumber;
 var elm$core$String$length = _String_length;
 var elm$core$String$cons = _String_cons;
@@ -6933,6 +6745,13 @@ var author$project$Ui$pageDaily = function (model) {
 							2,
 							author$project$Days$todaysBalance(model.days)))
 					])),
+				(author$project$Days$todaysBalance(model.days) < 0) ? A2(
+				elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						elm$html$Html$text('Oops, you went over. We will borrow from your future allowances.')
+					])) : elm$html$Html$text(''),
 				A2(
 				elm$html$Html$p,
 				_List_Nil,
@@ -6943,7 +6762,7 @@ var author$project$Ui$pageDaily = function (model) {
 						elm$html$Html$text(
 						' and $' + (A2(myrho$elm_round$Round$round, 2, model.totalSavings) + ' saved so far')),
 						elm$html$Html$text(
-						' with a daily allowance of ' + ('$' + (A2(myrho$elm_round$Round$round, 2, model.totalBudget / model.totalDays) + '...')))
+						' with a target daily allowance of ' + ('$' + (A2(myrho$elm_round$Round$round, 2, model.totalBudget / model.totalDays) + '...')))
 					])),
 				A2(
 				elm$html$Html$button,
