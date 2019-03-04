@@ -6871,13 +6871,20 @@ var author$project$Ui$number = function (num) {
 				'$' + A2(myrho$elm_round$Round$round, 2, num))
 			]));
 };
+var elm$core$List$isEmpty = function (xs) {
+	if (!xs.b) {
+		return true;
+	} else {
+		return false;
+	}
+};
 var elm$html$Html$li = _VirtualDom_node('li');
 var elm$html$Html$p = _VirtualDom_node('p');
 var elm$html$Html$ul = _VirtualDom_node('ul');
 var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
 var author$project$Ui$daysView = function (days) {
-	var days_ = author$project$Days$toRecord(days);
+	var todaysTransactions = author$project$Days$toRecord(days).selected.transactions;
 	return A2(
 		elm$html$Html$div,
 		_List_fromArray(
@@ -6888,13 +6895,20 @@ var author$project$Ui$daysView = function (days) {
 			]),
 		_List_fromArray(
 			[
-				A2(
-				elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						elm$html$Html$text('Transactions')
-					])),
+				function () {
+				var _n0 = elm$core$List$isEmpty(todaysTransactions);
+				if (_n0) {
+					return elm$html$Html$text('');
+				} else {
+					return A2(
+						elm$html$Html$p,
+						_List_Nil,
+						_List_fromArray(
+							[
+								elm$html$Html$text('Transactions')
+							]));
+				}
+			}(),
 				A2(
 				elm$html$Html$ul,
 				_List_Nil,
@@ -6909,13 +6923,11 @@ var author$project$Ui$daysView = function (days) {
 									author$project$Ui$number(t)
 								]));
 					},
-					function ($) {
-						return $.selected;
-					}(days_).transactions)),
+					todaysTransactions)),
 				function () {
-				var _n0 = author$project$Days$tomorrowsAllowance(days);
-				if (_n0.$ === 'Just') {
-					var allowance = _n0.a;
+				var _n1 = author$project$Days$tomorrowsAllowance(days);
+				if (_n1.$ === 'Just') {
+					var allowance = _n1.a;
 					return A2(
 						elm$html$Html$p,
 						_List_Nil,
