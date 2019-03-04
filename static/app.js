@@ -6571,6 +6571,8 @@ var author$project$Days$toRecord = function (days) {
 var elm$html$Html$li = _VirtualDom_node('li');
 var elm$html$Html$p = _VirtualDom_node('p');
 var elm$html$Html$ul = _VirtualDom_node('ul');
+var elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var elm$html$Html$Attributes$style = elm$virtual_dom$VirtualDom$style;
 var elm$core$Basics$abs = function (n) {
 	return (n < 0) ? (-n) : n;
 };
@@ -6845,7 +6847,12 @@ var author$project$Ui$daysView = function (days) {
 	var days_ = author$project$Days$toRecord(days);
 	return A2(
 		elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				A2(elm$html$Html$Attributes$style, 'background', 'rgba(0,0,0,0.1)'),
+				A2(elm$html$Html$Attributes$style, 'padding', '.5em 1em'),
+				A2(elm$html$Html$Attributes$style, 'border-radius', '4px')
+			]),
 		_List_fromArray(
 			[
 				A2(
@@ -6913,7 +6920,7 @@ var author$project$Ui$pageDaily = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						elm$html$Html$text('Current Balance:')
+						elm$html$Html$text('Current Balance')
 					])),
 				A2(
 				elm$html$Html$h1,
@@ -6936,7 +6943,7 @@ var author$project$Ui$pageDaily = function (model) {
 						elm$html$Html$text(
 						' and $' + (A2(myrho$elm_round$Round$round, 2, model.totalSavings) + ' saved so far')),
 						elm$html$Html$text(
-						' with a daily allowance of ' + ('$' + (A2(myrho$elm_round$Round$round, 2, model.totalBudget / model.totalDays) + ' ')))
+						' with a daily allowance of ' + ('$' + (A2(myrho$elm_round$Round$round, 2, model.totalBudget / model.totalDays) + '...')))
 					])),
 				A2(
 				elm$html$Html$button,
@@ -7013,6 +7020,13 @@ var author$project$Ui$pageSettings = function (model) {
 				_List_fromArray(
 					[
 						elm$html$Html$text('Settings')
+					])),
+				A2(
+				elm$html$Html$p,
+				_List_Nil,
+				_List_fromArray(
+					[
+						elm$html$Html$text('👋Hello! Thanks for trying out the pre-alpha release of MulaDash. We are still figuring things out. Expect MAJOR bugs. If you stay under todays allowance the remainder will roll into savings tomorrow. If you go over your daily allowance, the overage will be evenly deducted from all your future daily allowances.')
 					])),
 				A2(
 				elm$html$Html$p,

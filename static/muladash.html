@@ -29,11 +29,11 @@
             width: 100wh;
             height: 90vh;
             color: #fff;
-            background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background: linear-gradient(-45deg, rgb(197, 89, 56), rgb(173, 42, 93), rgb(26, 114, 146), rgb(25, 173, 139));
             background-size: 400% 400%;
             -webkit-animation: Gradient 15s ease infinite;
             -moz-animation: Gradient 15s ease infinite;
-            animation: Gradient 15s ease infinite;
+            animation: Gradient 20s ease infinite;
         }
 
         @-webkit-keyframes Gradient {
@@ -47,7 +47,9 @@
                 background-position: 0% 50%
             }
         }
-
+        p {
+            line-height: 1.3em;
+        }
         @-moz-keyframes Gradient {
             0% {
                 background-position: 0% 50%
@@ -77,6 +79,12 @@
         }
         h1 {
             font-size: 3em;
+            margin-top: 0px;
+        }
+        small {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255, 0.7)
         }
         h3 {
             font-weight: 100;
