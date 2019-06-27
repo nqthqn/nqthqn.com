@@ -1,5 +1,4 @@
 # nqthqn.com
-Personal webpage
 
 This repo includes a few nifty things, it
 
