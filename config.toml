@@ -1,3 +1,4 @@
 baseURL = "https://nqthqn.com/"
 languageCode = "en-us"
 title = "NQTHQN"
+disableKinds = ["sitemap", "taxonomy", "taxonomyTerm"]
