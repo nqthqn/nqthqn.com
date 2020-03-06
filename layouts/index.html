@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NQTHQN</title>
-    
-    {{ $style := resources.Get "scss/style.css" }}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint  }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-    
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,9 +24,7 @@
         {{ partial "common/logo.html" . }}
         {{.Content}}
     </header>
-    <!-- <main>
-        <article>
-        </article>
-    </main> -->
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="94f0bfaf-0373-416d-93f4-e2b8bc07fc8e";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <article class="fullblock bg-purple">
+        <a href="/resume/">Resumé</a>
+    </article>
 </body>

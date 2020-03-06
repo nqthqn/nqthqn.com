@@ -1,20 +1,22 @@
 +++
-title = ""
+title = "Resumé"
 
 +++
-**Nathan Nichols**
-github.com/nqthqn
-hi@nqthqn.com
-541-357-8673
 
-**Education**
+## Nathan Nichols
+
+ - [github.com/nqthqn](https/github.com/nqthqn)
+ - hi@nqthqn.com
+ - 541-357-8673
+
+### Education
 
 BA in Computer and Information Science, University of Oregon, 2013
 
-**Work**
+### Work
 
 _1/18 - now_   
-Front End Developer at Concentric Sky
+**Front End Developer at Concentric Sky**
 
 * Built Pattern Library for Badgr Product Suite
 * Performed accessibility audits and fixes to meet WCAG 2.1 Level AA compliance
@@ -22,26 +24,26 @@ Front End Developer at Concentric Sky
 * Introduced Automated UI Testing (Cypress)
 
 _9/13 - 1/18_   
-Lead Software Developer at Oregon Research Institute
+**Lead Software Developer at Oregon Research Institute**
 
 * Built two SPAs and two embedded applications (Elm)
 * Rewrote legacy PHP web application in Django
 * Hired and managed development team
 
 _9/13 - 12/14_   
-College Instructor at Pioneer Pacific College
+**College Instructor at Pioneer Pacific College**
 
 * Teaching TCP/IP, Network Design, Web Design, Visual Basic, and T-SQL at the associate's level
 * Established an internship program for CIT Dept.
 
 _6/11 - 6/12_   
-Graphic Designer at Uplink Spyder
+**Graphic Designer at Uplink Spyder**
 
 * Designed WordPress plugins and child themes
 * Designed for social media, printed ads, mood boards and design guides for brands
 * Some work represented here
 
-**Noteworthy**
+### Noteworthy
 
 * Elm Eugene Meetup Organizer and Speaker
 * Teachers Assistant at NoRedInk for an ElmBridge Workshop

@@ -1,7 +1,12 @@
 :root {
     --theme: #59f0aa;
-    --font1: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font1: 'Roboto', sans-serif;
     --font2: Palatino, Garamond, Georgia, serif;
+    --color-purple: #ead5ff;
+    --color-aqua: #aff1e1;
+    --color-blue: #9ec2f0;
+    --color-pink: #ec8e91;
+    --color-green: #d5f2b8;
 }
 
 body {
@@ -16,11 +21,13 @@ body {
         font-size: 1.5em;
     }
 }
+
 main {
     justify-content: center;
     display: flex;
     background: #efefef;
     padding: 16px;
+
     article {
         max-width: 1000px;
         color: #111;
@@ -29,7 +36,9 @@ main {
         font-family: var(--font1);
     }
 }
-header {
+
+header,
+.fullblock {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -59,7 +68,7 @@ header {
     a {
         background:
             linear-gradient(to bottom, var(--theme) 0%,
-            var(--theme) 100%);
+                var(--theme) 100%);
         background-position: 0 100%;
         background-repeat: repeat-x;
         background-size: 4px 4px;
@@ -73,6 +82,25 @@ header {
     }
 }
 
+.bg-purple {
+    background-color: var(--color-purple);
+}
+
+.bg-aqua {
+    background-color: var(--color-aqua);
+}
+
+.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.bg-pink {
+    background-color: var(--color-pink);
+}
+
+.bg-green {
+    background-color: var(--color-green);
+}
 
 /* Cool list! */
 ol {
