@@ -6,7 +6,7 @@ title = "Resumé"
 
 ## Nathan Nichols
 
- - [github.com/nqthqn](https/github.com/nqthqn)
+ - [github.com/nqthqn](https://github.com/nqthqn)
  - hi@nqthqn.com
  - 541-357-8673
 
