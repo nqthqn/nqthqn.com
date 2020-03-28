@@ -27,4 +27,13 @@
     <article class="fullblock bg-purple">
         <a href="/resume/">Resumé</a>
     </article>
+    <article class="fullblock bg-blue">
+        <p>
+        <strong>I MADE A</strong>
+            bookmarklet to
+            <a class="bookmarklet" href="javascript:(function()%7Blet%20tracksAsCsv%20%3D%20%5B...document.querySelectorAll(%22.track-name-wrapper%22)%5D.map(t%20%3D%3E%20(%7Bname%3A%20t.querySelector(%22.tracklist-name%22).innerText%2Cartist%3A%20t.querySelector(%22.TrackListRow__artists%22).innerText%2Calbum%3A%20t.querySelector(%22.TrackListRow__album%22).innerText%7D)).map((%7B%20name%2C%20artist%2C%20album%20%7D)%20%3D%3E%20%7Bconst%20q%20%3D%20encodeURIComponent(%60%24%7Bname%7D%20%24%7Bartist%7D%20%24%7Balbum%7D%60)%3Bconst%20youtube%20%3D%20%60https%3A%2F%2Fwww.youtube.com%2Fresults%3Fsearch_query%3D%24%7Bq%7D%60%3Breturn%20%60%24%7Bname%7D%5Ct%24%7Bartist%7D%5Ct%24%7Balbum%7D%5Ct%24%7Byoutube%7D%60%7D).join('%5Cn')%3Bnavigator.clipboard.writeText(%60name%5Ctartist%5Ctalbum%5Ctyoutube%5Cn%60%2BtracksAsCsv)%7D)()">
+                Copy Spotify Playlist to CSV</a>. Easily copy spotify playlists into a spreadsheet. Includes YouTube search links.
+        </p>
+    </article>
+    
 </body>
