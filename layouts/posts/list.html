@@ -1,0 +1,16 @@
+{{define "main"}}
+<div class="posts" >
+<a href="/">nqthqn</a>
+<h1>Posts</h1>
+<ul class="posts">
+    {{ range .Pages }}
+    <li>
+        <em>{{ .Date.Format "Jan 2 2006" }}</em>
+        <a href="{{ .Permalink }}">
+            {{ .Title }}
+        </a>
+    </li>
+    {{ end }}
+</ul>
+</div>
+{{ end }}

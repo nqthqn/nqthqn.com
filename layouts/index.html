@@ -19,13 +19,14 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body class="home">
     <header>
         {{ partial "common/logo.html" . }}
         {{.Content}}
     </header>
-    <article class="fullblock bg-purple">
-        <a href="/resume/">Resumé</a>
+    <article class="fullblock bg-purple nav">
+        <a href="/resume/">resumé</a><span> &amp; </span>
+        <a href="/posts/">posts</a>
     </article>
     <article class="fullblock bg-blue">
         <p>

@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>{{.Title}}</title>
-        <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+        {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint  }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
     </head>
     <body>
         {{block "main" .}}{{end}}

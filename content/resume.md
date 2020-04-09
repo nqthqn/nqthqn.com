@@ -1,10 +1,8 @@
 +++
 title = "Resumé"
-
 +++
 
-
-## Nathan Nichols
+# Nathan Nichols
 
  - [github.com/nqthqn](https://github.com/nqthqn)
  - hi@nqthqn.com
