@@ -5,7 +5,7 @@ date: 2020-04-13T23:21:22-07:00
 
 ### Wed Apr 15 2020
  - Edit a macro `q`: `"qp` then edit, then `V"qy` to update it.
- - `gf` go into file
+ - `gf` open file in buffer
  - `^o` go back, `^i` go forward, `:jumps`
 
 ### Wed Apr  8 2020
@@ -17,7 +17,7 @@ date: 2020-04-13T23:21:22-07:00
  - `:%g!/^(/d` across the whole file (`%`) run a command (`g`) on any line that does not (`!`) start with `(` (`g!/^(`) — in this case the command is delete (`d`)
  - `:%s/foo/bar/gc` substitute foo for bar across the whole line, prompt for confirmation
  - `r` replace character
- - `J` join line(s), work with visual selection. 
+ - `J` join line below - work with visual selection. 
  - `^w v` to split vertically
  - `:registers` list what you have copied
  - `"ayiw` into register a, yank inner word

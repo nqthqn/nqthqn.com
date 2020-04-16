@@ -1,5 +1,6 @@
 :root {
   --theme: #59f0aa;
+  --light: hsl(0,0%,85%);
   --font1: "Roboto", sans-serif;
   --font2: Palatino, Garamond, Georgia, serif;
   --color-purple: #ead5ff;
@@ -39,38 +40,30 @@
 }
 @media (prefers-color-scheme: dark) {
   article.bg-purple {
-    background-color: #360b31;
+    background-color: #141414;
   }
 
   article.bg-blue {
-    background-color: #122233;
+    background-color: #1c1c1c;
   }
   path {
-    stroke: white;
+    stroke: var(--light);
     fill-opacity: 0.6;
   }
   body {
     background: #060606;
-    color: white;
+    color: var(--light);
     a {
-      color: white;
+      color: var(--light);
       &:hover {
         color: black;
       }
     }
     blockquote {
-      border-color: white;
+      border-color: var(--light);
     }
   }
   .post {
-    pre {
-      color: white;
-      background: #333;
-    }
-    code {
-      color: white;
-      background: #333;
-    }
   }
 }
 body {
