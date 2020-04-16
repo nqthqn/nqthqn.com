@@ -3,7 +3,17 @@
 <div class="post">
     <a href="/posts">← All Posts</a>
     <h1>{{.Title}}</h1>
-    <em>{{ .Date.Format "Jan 2 2006" }}</em>
+    <ul class="tags">
+        {{ range .Params.Tags }}
+        <li class="tag">
+            <a href="#">
+                {{ . }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    <em>{{ .Date.Format "January 2, 2006" }}</em>
+    <hr>
     {{.Content}}
 </div>
 {{end}}

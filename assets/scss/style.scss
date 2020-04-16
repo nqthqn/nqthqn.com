@@ -10,18 +10,40 @@
   --gridspace: 8px;
 }
 .nav {
-    span {
-        font-size:3rem;
-        margin: 10px;
+  span {
+    font-size: 3rem;
+    margin: 10px;
+  }
+}
+
+.tags {
+  display: block;
+  padding-left: 0px;
+  .tag {
+    a {
+      color: black;
     }
+    display: inline-block;
+    list-style: none;
+    margin: 4px;
+    background: var(--theme);
+    padding: 2px 8px;
+    &:hover {
+      top: -2px;
+      transition: top 250ms linear;
+    }
+  }
+}
+.shadow {
+  box-shadow: rgba(20, 20, 20, 0.4) 0px 60px 70px -30px;
 }
 @media (prefers-color-scheme: dark) {
   article.bg-purple {
-    background-color: #060606;
+    background-color: #360b31;
   }
 
   article.bg-blue {
-    background-color: #060606;
+    background-color: #122233;
   }
   path {
     stroke: white;
@@ -41,11 +63,13 @@
     }
   }
   .post {
-    p {
-      code {
-        color: white;
-        background: #333;
-      }
+    pre {
+      color: white;
+      background: #333;
+    }
+    code {
+      color: white;
+      background: #333;
     }
   }
 }
@@ -180,51 +204,5 @@ li {
 .home {
   font-size: 1.5em;
 }
-.posts {
-  padding-left: 0px;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  li {
-    list-style: none;
-    font-size: 1.3rem;
-    margin-top: 2rem;
-    em {
-      display: block;
-      font-size: 0.85rem;
-    }
-  }
-}
-.post {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-  box-sizing: border-box;
-  pre {
-    padding: 1rem;
-    border-radius: 8px;
-    overflow: auto;
-    code {
-      background: unset;
-    }
-  }
-  code {
-    background: #e8e8e8;
-    padding: 2px;
-    border-radius: 4px;
-  }
-  h1 {
-    margin-bottom: 8px;
-    line-height: 2.25rem;
-    @media (min-width: 600px) {
-      line-height: 3.2rem;
-    }
-  }
-}
-blockquote {
-  border-left: 8px solid black;
-  padding-left: 1.5rem;
-  margin: 0px;
-}
 
+@import "blog";
