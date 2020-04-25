@@ -3,6 +3,10 @@ title: Vim GIFs — April
 date: 2020-04-13T23:21:22-07:00
 ---
 
+### Wed Apr 25 2020
+ - `gx` to open the URL under the cursor
+ - `:nmap <leader>k :thing<cr>` to create a mapping in normal mode
+
 ### Wed Apr 15 2020
  - Edit a macro `q`: `"qp` then edit, then `V"qy` to update it.
  - `gf` open file in buffer
