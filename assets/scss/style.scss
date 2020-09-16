@@ -38,34 +38,6 @@
 .shadow {
   box-shadow: rgba(20, 20, 20, 0.4) 0px 60px 70px -30px;
 }
-@media (prefers-color-scheme: dark) {
-  article.bg-purple {
-    background-color: #141414;
-  }
-
-  article.bg-blue {
-    background-color: #1c1c1c;
-  }
-  path {
-    stroke: var(--light);
-    fill-opacity: 0.6;
-  }
-  body {
-    background: #060606;
-    color: var(--light);
-    a {
-      color: var(--light);
-      &:hover {
-        color: black;
-      }
-    }
-    blockquote {
-      border-color: var(--light);
-    }
-  }
-  .post {
-  }
-}
 body {
   font-family: var(--font1);
   font-size: 1.1em;
@@ -129,7 +101,7 @@ a {
   text-decoration: none;
   transition: background-size 0.2s;
   &:hover {
-    background-size: 4px 50px;
+    background-size: 4px 6px;
   }
 }
 
@@ -199,3 +171,4 @@ li {
 }
 
 @import "blog";
+@import "dark";

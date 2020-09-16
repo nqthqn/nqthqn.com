@@ -1,24 +1,20 @@
 ---
-title: Vim GIFs — April
+title: Vim Cheatsheet
 date: 2020-04-13T23:21:22-07:00
 ---
 
-### Sat Apr 25 2020
+ - `<leader>hu` to unstage a hunk using gitgutter 
+ - `zz` center cursor
+ - `Ctrl-^` switches between buffers in normal mode.
  - `:terminal zsh` to open a terminal in vim - handy for executing scripts
  - `gx` to open the URL under the cursor
  - `:nmap <leader>k :thing<cr>` to create a mapping in normal mode
-
-### Wed Apr 15 2020
  - Edit a macro `q`: `"qp` then edit, then `V"qy` to update it.
  - `gf` open file in buffer
  - `^o` go back, `^i` go forward, `:jumps`
-
-### Wed Apr  8 2020
  - `qa` quit all windows
  - `fc` find the first c in a line (variants: `FtT`)
  - `ysiw"` surround word in "quotes", `cs'"` change surrounding `'` to `"` 'like'
-
-### Mon Apr  6 2020
  - `:%g!/^(/d` across the whole file (`%`) run a command (`g`) on any line that does not (`!`) start with `(` (`g!/^(`) — in this case the command is delete (`d`)
  - `:%s/foo/bar/gc` substitute foo for bar across the whole line, prompt for confirmation
  - `r` replace character
@@ -26,13 +22,36 @@ date: 2020-04-13T23:21:22-07:00
  - `^w v` to split vertically
  - `:registers` list what you have copied
  - `"ayiw` into register a, yank inner word
-
-### Sun Apr  5 2020
  - `I` to insert at start of line, `A` to insert at end of line
-
-### Fri Apr  3 2020
  - `.` repeat last action: `*cw<name><esc>n.n.n.n.` to rename a bunch of stuff
  - `D` delete till end of line
  - `di"` delete in quotes 
  - `%` jump to matching brace, `V%`, visually select until matching brace
  - `x` delete char. better then forward delete, block cursor
+ - Map shortcuts in normal mode `nmap <leader>t gg` 
+ - `dtT` delete until T
+ - `gg=G` auto intent a file (sometimes works)
+ - `]c` and `[c` next and previous git hunk (use with git-gutter plugin)
+ - `\hs` stage current hunk
+ - `T` is like `t` but backwards, `dt{` means delete until {
+ - `F` is like `f` but backwards, `dF(` means delete back to ( (inclusive)
+ - `H`,`M`, `L` high middle low of the screen
+ - `gg` top of file, `G` bottom of file, `8gg` line 8 of file
+ - `zz` center screen to cursor
+ - `^e` scroll down, `^y` scroll up
+ - `^f` scroll full screen, `^d` scroll have
+ - Nice for macros (`q<slot>`, `q`, `@<slot>`)
+ - `0` start of line
+ - `^` first char of line
+ - `$` end of line
+ - `g_` last char on line
+ - `*` search for word that you are currently on
+ - `u` undo, `^r` redo
+ - `W` is a big word
+ - Marks
+ - `mm` set a mark called m on the line
+ - backtick `m` to go to mark called m
+ - `:r !date` to insert todays date on next line
+ - `Shift K` shows documentation for the thing under the cursor
+ - `:h f` taught me about the `f` motion, `f"` takes me to the :ext " on the current line
+ - `inoremap " ""<left>` maps `"` in insert mode to `""` with the cursor between the `""`
