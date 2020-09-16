@@ -30,10 +30,10 @@
       <itunes:name>{{ $.Site.Params.feed.itunes_owner_name }}</itunes:name>
       <itunes:email>{{ $.Site.Params.feed.itunes_owner_email }}</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://nqthqn.com/simple-circuits.png" />
-    <googleplay:image href="https://nqthqn.com/simple-circuits.png"></googleplay:image>
+    <itunes:image href="/simple-circuits.png" />
+    <googleplay:image href="/simple-circuits.png"></googleplay:image>
     <image>
-      <url>https://nqthqn.com/simple-circuits.png</url>
+      <url>/simple-circuits.png</url>
       <title>(nqthqn.com)</title>
       <link>{{ $.Site.BaseURL }}</link>
     </image>
