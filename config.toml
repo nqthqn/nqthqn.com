@@ -2,3 +2,18 @@ baseURL = "https://nqthqn.com/"
 languageCode = "en-us"
 title = "NQTHQN"
 disableKinds = ["sitemap", "taxonomy", "taxonomyTerm"]
+itunes_author = "Mr. N"
+
+[[feed]]
+itunes_summary = "TODO"
+language = "TODO"
+copyright = "TODO"
+itunes_subtitle = "TODO"
+itunes_author = "TODO"
+itunes_owner_email = "TODO"
+itunes_owner_name = "TODO"
+itunes_image = "TODO"
+itunes_top_category = "TODO"
+itunes_first_sub_category  = "TODO"
+itunes_second_sub_category  = "TODO"
+explicit = "TODO"

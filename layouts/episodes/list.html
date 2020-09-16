@@ -1,0 +1,17 @@
+{{define "main"}}
+<div class="posts">
+<a class="logo" href="/">
+    {{ partial "common/logo.html" . }}
+</a>
+<a href="/">nqthqn</a>
+<h1>Simple Circuits 🎙️ 💪</h1>
+<ul class="posts">
+    {{ range .Pages }}
+    <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <em>{{ .Date.Format "January 2, 2006" }}</em>
+    </li>
+    {{ end }}
+</ul>
+</div>
+{{ end }}

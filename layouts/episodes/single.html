@@ -1,0 +1,21 @@
+{{define "main"}}
+<div class="post">
+    <a href="/episodes">← All Episodes</a>
+    <h1>{{.Title | upper}}</h1>
+    <em>{{ .Date.Format "January 2, 2006" }}</em>
+    <hr>
+    
+    <figure>
+        {{ $e := .Resources.GetMatch "episode.m4a" }}
+        <audio
+            controls
+            src="{{ $e.Permalink }}">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+    </figure>
+
+    <h2>Transcript</h2>
+    {{.Content}}
+</div>
+{{end}}
