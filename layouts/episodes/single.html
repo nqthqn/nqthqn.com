@@ -6,10 +6,9 @@
     <hr>
     
     <figure>
-        {{ $e := .Resources.GetMatch "episode.m4a" }}
         <audio
             controls
-            src="{{ $e.Permalink }}">
+            src="{{ .Params.podcast_file }}">
                 Your browser does not support the
                 <code>audio</code> element.
         </audio>

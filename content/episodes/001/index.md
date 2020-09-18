@@ -4,7 +4,7 @@ date: 2020-09-16T00:00:00Z
 summary: I recorded a voice memo for myself last night with the intention of working out this morning. It worked!
 # TODO:  Generate these from m4a file:
 podcast_duration: 10
-podcast_file: episode.m4a
+podcast_file: https://storage.googleapis.com/nqthqn-dat/episode-001.m4a
 podcast_bytes: 300
 aliases:
   - /episodes/episode-1/
