@@ -18,10 +18,12 @@ BA in Computer and Information Science, University of Oregon, 2013
 _1/18 - now_   
 **Front End Developer at Concentric Sky**
 
-* Built Pattern Library for Badgr Product Suite
+* Built Pattern Library for Badgr Product Suite (Angular)
 * Performed accessibility audits and fixes to meet WCAG 2.1 Level AA compliance
-* Wrote BadgeRank frontend (Elm)
+* Wrote Open Badges search engine frontend (Elm)
 * Introduced Automated UI Testing (Cypress)
+* Implemented SAML2 in Django API
+* Built infastructure using terraform
 
 _9/13 - 1/18_   
 **Lead Software Developer at Oregon Research Institute**
