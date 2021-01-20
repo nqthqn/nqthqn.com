@@ -23,7 +23,7 @@ _1/18 - now_
 * Wrote Open Badges search engine frontend (Elm)
 * Introduced Automated UI Testing (Cypress)
 * Implemented SAML2 in Django API
-* Built infastructure using terraform
+* Built infrastructure using terraform
 
 _9/13 - 1/18_   
 **Lead Software Developer at Oregon Research Institute**
