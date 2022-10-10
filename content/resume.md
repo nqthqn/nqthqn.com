@@ -14,8 +14,15 @@ title = "Resumé"
 BA in Computer and Information Science, University of Oregon, 2013
 
 ### Work
+_1/21 - now_   
+**VP of Design at Pyxelchain Technology**
 
-_1/18 - now_   
+* Established best practices for globally distributed design team (12 designers and developers)
+* Exemplified constructive and directive design feedback
+* Facilitated design discussions
+* Qualitative user research 
+
+_1/18 - 1/21_   
 **Front End Developer at Concentric Sky**
 
 * Built Pattern Library for Badgr Product Suite (Angular)
