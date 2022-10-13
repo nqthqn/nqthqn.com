@@ -17,10 +17,11 @@ BA in Computer and Information Science, University of Oregon, 2013
 _1/21 - now_   
 **VP of Design at Pyxelchain Technology**
 
-* Established best practices for globally distributed design team (12 designers and developers)
+* Led a distributed 12 member design team
+* Built protoypal fullstack software
+* Maintained large wireframes & high fidelity figma projects
 * Exemplified constructive and directive design feedback
-* Facilitated design discussions
-* Qualitative user research 
+
 
 _1/18 - 1/21_   
 **Front End Developer at Concentric Sky**
