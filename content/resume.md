@@ -18,10 +18,9 @@ _1/21 - now_
 **VP of Design at Pyxelchain Technology**
 
 * Led a distributed 12 member design team
-* Built protoypal fullstack software
-* Maintained large wireframes & high fidelity figma projects
+* Built prototypical full-stack software
+* Maintained large wire-frames & high fidelity figma projects
 * Exemplified constructive and directive design feedback
-
 
 _1/18 - 1/21_   
 **Front End Developer at Concentric Sky**
