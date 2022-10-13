@@ -50,7 +50,6 @@ _6/11 - 6/12_
 
 * Designed WordPress plugins and child themes
 * Designed for social media, printed ads, mood boards and design guides for brands
-* Some work represented here
 
 ### Noteworthy
 
