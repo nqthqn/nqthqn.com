@@ -25,7 +25,7 @@ _1/21 - now_
 _1/18 - 1/21_   
 **Front End Developer at Concentric Sky**
 
-* Built Pattern Library for Badgr Product Suite (Angular)
+* Built CSS Pattern Library for Angular applications
 * Performed accessibility audits and fixes to meet WCAG 2.1 Level AA compliance
 * Wrote Open Badges search engine frontend (Elm)
 * Introduced Automated UI Testing (Cypress)
