@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178239091-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-178239091-1');
+        gtag('config', 'UA-178239091-1');
     </script>
 
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NQTHQN</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
-    {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint  }}
+    {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 
@@ -37,13 +37,27 @@
     <article class="fullblock bg-purple">
         <a href="/resume/">Resumé</a>
     </article>
+    <article class="fullblock bg-green">
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                
+                {{ range $.Site.Data.homepage.skills }}
+                    <li>{{ . }}</li>
+                {{ end }}
+                
+            </ul>
+        </div>
+    </article>
     <article class="fullblock bg-blue">
         <p>
-        <strong>I MADE A</strong>
+            <strong>I MADE A</strong>
             bookmarklet to
-            <a class="bookmarklet" href="javascript:(function()%7Blet%20tracksAsCsv%20%3D%20%5B...document.querySelectorAll(%22.track-name-wrapper%22)%5D.map(t%20%3D%3E%20(%7Bname%3A%20t.querySelector(%22.tracklist-name%22).innerText%2Cartist%3A%20t.querySelector(%22.TrackListRow__artists%22).innerText%2Calbum%3A%20t.querySelector(%22.TrackListRow__album%22).innerText%7D)).map((%7B%20name%2C%20artist%2C%20album%20%7D)%20%3D%3E%20%7Bconst%20q%20%3D%20encodeURIComponent(%60%24%7Bname%7D%20%24%7Bartist%7D%20%24%7Balbum%7D%60)%3Bconst%20youtube%20%3D%20%60https%3A%2F%2Fwww.youtube.com%2Fresults%3Fsearch_query%3D%24%7Bq%7D%60%3Breturn%20%60%24%7Bname%7D%5Ct%24%7Bartist%7D%5Ct%24%7Balbum%7D%5Ct%24%7Byoutube%7D%60%7D).join('%5Cn')%3Bnavigator.clipboard.writeText(%60name%5Ctartist%5Ctalbum%5Ctyoutube%5Cn%60%2BtracksAsCsv)%7D)()">
-                Copy Spotify Playlist to CSV</a>. Easily copy spotify playlists into a spreadsheet. Includes YouTube search links.
+            <a class="bookmarklet"
+                href="javascript:(function()%7Blet%20tracksAsCsv%20%3D%20%5B...document.querySelectorAll(%22.track-name-wrapper%22)%5D.map(t%20%3D%3E%20(%7Bname%3A%20t.querySelector(%22.tracklist-name%22).innerText%2Cartist%3A%20t.querySelector(%22.TrackListRow__artists%22).innerText%2Calbum%3A%20t.querySelector(%22.TrackListRow__album%22).innerText%7D)).map((%7B%20name%2C%20artist%2C%20album%20%7D)%20%3D%3E%20%7Bconst%20q%20%3D%20encodeURIComponent(%60%24%7Bname%7D%20%24%7Bartist%7D%20%24%7Balbum%7D%60)%3Bconst%20youtube%20%3D%20%60https%3A%2F%2Fwww.youtube.com%2Fresults%3Fsearch_query%3D%24%7Bq%7D%60%3Breturn%20%60%24%7Bname%7D%5Ct%24%7Bartist%7D%5Ct%24%7Balbum%7D%5Ct%24%7Byoutube%7D%60%7D).join('%5Cn')%3Bnavigator.clipboard.writeText(%60name%5Ctartist%5Ctalbum%5Ctyoutube%5Cn%60%2BtracksAsCsv)%7D)()">
+                Copy Spotify Playlist to CSV</a>. Easily copy spotify playlists into a spreadsheet. Includes YouTube
+            search links.
         </p>
     </article>
-    
+
 </body>
