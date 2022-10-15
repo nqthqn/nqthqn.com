@@ -24,19 +24,18 @@ _1/21 - now_
 **VP of Design at Pyxelchain Technology**
 
 -   Led a distributed 12 member design team
--   Built prototypical full-stack software
--   Maintained large wireframes & high fidelity Figma projects
+-   Built fullstack prototypes (Django)
+-   Maintained large wireframes (Figma)
 -   Exemplified constructive and directive design feedback
 
 _1/18 - 1/21_  
 **Front End Developer at Concentric Sky**
 
--   Built CSS Pattern Library for Angular applications
--   Performed accessibility audits and fixes to meet WCAG 2.1 Level AA compliance
--   Wrote Open Badges search engine frontend (Elm)
--   Introduced Automated UI Testing (Cypress)
--   Implemented SAML2 in Django API
--   Built infrastructure using terraform
+-   Designed WCAG 2.1 Level AA compliant pattern libraries (HTML/SCSS)
+-   Built frontend application for Open Badges Search (Elm)
+-   Wrote automated UI Testing (Cypress)
+-   Implemented SAML2 authentication, wrote migrations (Django)
+-   Built infrastructure (Terraform)
 
 _9/13 - 1/18_  
 **Lead Software Developer at Oregon Research Institute**
