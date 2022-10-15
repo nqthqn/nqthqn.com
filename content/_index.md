@@ -2,4 +2,4 @@
 title: "NQTHQN"
 ---
 
-**NQTHQN**_noun_ Web Engineer with 10+ years experience. Expertise with design systems, accessibility and Elm. Experience with Angular and React. Find me on [GitHub](https://github.com/nqthqn) and [Twitter](https://twitter.com/nqthqn0). Check out the [blog](/blog).
+**NQTHQN**_noun_ a web engineer with 10+ years end-to-end expertise from ideation to implementation. Read the [blog](/blog) or scope the [résumé](/resume).
