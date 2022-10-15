@@ -2,7 +2,7 @@
 title = "Resumé"
 +++
 
-[🡠 home](/)
+[🏠 home](/)
 
 ## Nathan Nichols
 
