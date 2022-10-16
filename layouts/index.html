@@ -20,6 +20,8 @@
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
+    <script src="https://unpkg.com/feather-icons"></script>
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,9 +41,37 @@
             <h2>Professional experience with...</h2>
             <ul class="skills-list">
                 {{ range $.Site.Data.homepage.skills }}
-                    <li>{{ . }}</li>
+                <li>{{ . }}</li>
                 {{ end }}
             </ul>
         </div>
     </article>
+    <article class="fullblock bg-pink">
+        <div>
+            <h2>Consultation</h2>
+            <form class="consultationForm" action="https://formspree.io/f/xqkjlrwg" method="POST">
+                <label>
+                    E-mail:
+                    <input placeholder="hello@example.com" type="email" name="email">
+                </label>
+                <label>
+                    Message:
+                    <textarea placeholder="Tell me a secret.." name="message"></textarea>
+                </label>
+                <!-- your other form fields go here -->
+                <button type="submit">
+                    <i data-feather="send"></i>
+                    Say Hello
+                </button>
+            </form>
+        </div>
+        <!--
+translate3d(0px, 12%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg)
+translate3d(0px, 5.12304%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg)
+          -->
+    </article>
+
+    <script>
+        feather.replace()
+      </script>
 </body>

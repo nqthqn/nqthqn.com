@@ -282,3 +282,53 @@ li {
         display: none;
     }
 }
+
+.consultationForm {
+    display: grid;
+    background: rgba(86, 86, 86, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+    width: 100%;
+    @media (min-width: 700px) {
+        width: 600px;
+    }
+    input, textarea, button {
+        padding: .9em;
+        font-size: .5em;
+        border: none;
+        border-radius: 8px;
+        font-family: sans-serif;
+        &::placeholder {
+            color: rgb(116, 116, 116);
+            font-size: 1em;
+            font-family: sans-serif;
+        }
+    }
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: .2em;
+        margin-top: 1em;
+        font-weight: bold;
+    }
+    textarea {
+        height: 100px;
+    }
+    input, textarea {
+        background: white;
+    }
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        font-size: .8em;
+        margin-top: 1em;
+        text-transform: uppercase;
+        color: black;
+        background-color: #59f0aa;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
