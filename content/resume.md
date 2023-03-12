@@ -21,7 +21,14 @@ BA in Computer and Information Science, University of Oregon, 2013
 
 ### Work
 
-_1/21 - now_  
+_11/22 - now_  
+**Senior Software Engineer at Avetta**
+
+- Writing enterprise level Elm with fully remote team
+- Teaching Elm to backend developers and ambitious QA developers
+- Reviewing and providing feedback on large additions to the monolithic codebase
+
+_1/21 - 11/22_  
 **VP of Design at Pyxelchain Technology**
 
 - Led a distributed 12 member design team
@@ -30,7 +37,7 @@ _1/21 - now_
 - Exemplified constructive and directive design feedback
 
 _1/18 - 1/21_  
-**Front End Developer at Concentric Sky**
+**Frontend Developer at Concentric Sky**
 
 - Designed WCAG 2.1 Level AA compliant pattern libraries (HTML/SCSS)
 - Built frontend application for Open Badges Search (Elm)
