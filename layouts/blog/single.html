@@ -1,8 +1,0 @@
-{{define "main"}}
-<div class="post">
-    <a href="/blog">← All Posts</a>
-    <h1>{{.Title | upper}}</h1>
-    <em>{{ .Date.Format "2006.01.02" }}</em>
-    {{.Content}}
-</div>
-{{end}}

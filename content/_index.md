@@ -1,5 +1,7 @@
 ---
-title: "NQTHQN"
+author: Dirk Olbrich
+title: Hi, and welcome.
+date: 2019-05-15
 ---
 
-**NQTHQN**_noun_ a web engineer with 10+ years end-to-end expertise from ideation to implementation. Read the [blog](/blog) or scope the [résumé](/resume).
+Live long and code.
