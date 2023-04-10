@@ -1,7 +1,6 @@
 ---
-author: Dirk Olbrich
-title: Hi, and welcome.
-date: 2019-05-15
+author: Nate Nichols
 ---
 
-Live long and code.
+# NQTHQN
+_noun_ a web engineer with 10+ years end-to-end expertise from ideation to implementation. Read the [blog](/posts) or scope the [résumé](/resume).

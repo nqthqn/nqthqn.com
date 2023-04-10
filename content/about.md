@@ -1,12 +1,11 @@
 ---
-author: Dirk Olbrich
+author: Nate Nichols
 title: About
 date: 2019-05-13
-description: A short description about me.
+description: a web engineer with 10+ years end-to-end expertise from ideation to implementation.
 keywords: [about, creator]
 type: about
 ---
 
-Hugo Starter Theme for Tailwindcss.
+Nate is a web engineer with 10+ years end-to-end expertise from ideation to implementation. With a diverse programming background — everything from programming scientific syringe pumps in fMRI machines to building scalable learning management software — he brings a unique problem solving skillset.
 
-Made by [me](https://github.com/dirkolbrich/).

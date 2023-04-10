@@ -13,3 +13,6 @@
         @apply text-sky-600;
     }
 }
+* {
+    box-sizing: border-box;
+}

@@ -1,6 +1,44 @@
 {{ define "main" }}
-<article class="justify-self-center mx-auto text-center prose dark:prose-invert prose-slate lg:prose-lg">
-    <h1 class="font-serif font-extralight text-5xl welcome-headline">{{ .Title }}</h1>
-    {{ .Content }}
-</article>
+<div class="md:w-1/2">
+    <div class="prose dark:prose-invert prose-slate lg:prose-lg p-3">
+        {{ .Content }}
+        <!-- hugo template iterate over pages in post category -->
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+        {{ range .Site.Pages }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ .Date.Format "January 2, 2006" }} <br>
+        {{ end }}
+    </div>
+</div>
+<!-- tailwind display classes -->
+<!-- https://tailwindcss.com/docs/display -->
+<div class="hidden md:block w-1/2 h-screen fixed right-0 top-0 bg-slate-900 text-slate-400">
+    <canvas id="canvas" class="h-screen w-full"></canvas>
+    <script>
+        
+    </script>
+</div>
 {{ end }}
