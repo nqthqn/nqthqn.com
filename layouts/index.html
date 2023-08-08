@@ -32,22 +32,14 @@
 <body>
     <header>
         {{ partial "common/logo.html" . }}
-        {{.Content}}
+        <p><strong>NQTHQN</strong><em>noun</em> With 10+ years end-to-end expertise from ideation to implementation working 
+            in full-stack and distributed applications I have honed my craft as a web engineer. 
+            Peruse my <a href="/notes">notes</a> or scope the <a href="/notes/resume">résumé</a>.</p>
     </header>
-    <article class="fullblock bg-green">
-        <div class="skills">
-            <h2>Professional experience with...</h2>
-            <ul class="skills-list">
-                {{ range $.Site.Data.homepage.skills }}
-                    <li>{{ . }}</li>
-                {{ end }}
-            </ul>
+    <section>
+        <div class="inner">
+            Oh, and check out <a href="https://github.com/nqthqn/obsidian-wordy">Wordy</a> — an Obsidian plugin I am writing to help find alliteratives synonyms, rhymes and more. It wraps the Datamuse API.
         </div>
-    </article>
-    <article class="fullblock bg-purple">
-       <center> 
-            <img src="/talk.jpg" aria-hidden="true" style="max-width:500px; margin: auto; display: block;" />
-            <p>"How to Tend a Knowledge Garden" <br> Presentation, Feb. 2023</p>
-        </center>
-    </article>
+    </section>
+
 </body>

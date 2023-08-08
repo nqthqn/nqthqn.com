@@ -7,38 +7,42 @@
     --color-blue: #9ec2f0;
     --color-pink: #ec8e91;
     --color-green: #d5f2b8;
+    --container: 800px;
 }
 
 body {
     font-family: var(--font1);
-    font-size: 2em;
-    line-height: 1em;
     height: 100vh;
     margin: 0px;
     text-rendering: optimizeLegibility;
-
-    @media (max-width: 600px) {
-        font-size: 1.5em;
-    }
 }
 
-header,
-.fullblock {
+header {
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 50vh;
+    font-size: 2em;
+    line-height: 1.2em;
+    @media (max-width: 600px) {
+        font-size: 1.5em;
+    }
 
+    .logo {
+        width: 80px;
+        display: block;
+        background: none;
+    }
+    
     @media (max-width: 600px) {
         flex-direction: column-reverse;
         text-align: center;
     }
 
-
     p {
         box-sizing: border-box;
         padding: 10px;
-        max-width: 800px;
+        max-width: var(--container);
     }
 
     em {
@@ -51,10 +55,40 @@ header,
     }
 }
 
+section {
+    background-color: rgb(242, 242, 242);
+    .inner {
+        max-width: var(--container);
+        margin: auto;
+        padding: 2em;
+        font-size: 1.5em;
+        line-height: 1.7em;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.image {
+    max-width: 300px;
+    height: auto;
+}
+
 blockquote {
-    background: rgb(220, 220, 220);
+    border-left:#59f0aa solid;
+    margin-left: 1em;
+    padding-left: 1em;
     padding: .1em .6em;
-    font-style: italic;
+    height: auto;
+    font-size: .7em;
+    line-height: 1.2em;
+    em {
+        font-size: .7em;
+        color: #888;
+    }
 }
 
 a {
@@ -147,132 +181,6 @@ li {
     margin-bottom: .5em
 }
 
-
-.logo {
-    width: 80px;
-    display: block;
-    background: none;
-}
-
-.posts,
-.post {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 1em;
-}
-
-.posts {
-    h1 {
-        line-height: 1em;
-        margin-bottom: 1em;
-    }
-
-    ul {
-        padding-left: 0;
-    }
-
-    li {
-        margin-left: 0;
-        list-style: none;
-        background: rgb(235, 235, 235);
-        padding: .5em;
-
-        em {
-            font-size: .5em;
-            display: block;
-            line-height: 1;
-        }
-    }
-}
-
-
-
-.post {
-    h1 {
-        line-height: 1;
-        margin-bottom: 0;
-    }
-
-    h2 {
-        font-size: 1em;
-        margin-top: 2em;
-    }
-
-    p {
-        font-size: .5em;
-        line-height: 1.5;
-    }
-
-    em {
-        font-size: .5em;
-        display: block;
-        line-height: 1;
-        margin-bottom: 2em;
-    }
-
-    audio::-webkit-media-controls-timeline,
-    audio::-webkit-media-controls-panel,
-    audio::-webkit-media-controls-mute-button,
-    audio::-webkit-media-controls-play-button,
-    audio::-webkit-media-controls-timeline-container,
-    audio::-webkit-media-controls-current-time-display,
-    audio::-webkit-media-controls-time-remaining-display,
-    audio::-webkit-media-controls-timeline,
-    audio::-webkit-media-controls-volume-slider-container,
-    audio::-webkit-media-controls-volume-slider,
-    audio::-webkit-media-controls-seek-back-button,
-    audio::-webkit-media-controls-seek-forward-button,
-    audio::-webkit-media-controls-fullscreen-button,
-    audio::-webkit-media-controls-rewind-button,
-    audio::-webkit-media-controls-return-to-realtime-button,
-    audio::-webkit-media-controls-toggle-closed-captions-button {
-        background-color: var(--theme);
-    }
-
-    figure {
-        display: block;
-        margin: 0;
-        margin-top: 2em;
-        margin-bottom: 2em;
-
-        // background: rgb(235, 235, 235);
-        // border: var(--theme) .5em solid;
-        // padding: 1em;
-        audio {
-            width: 100%;
-            max-width: 500px;
-        }
-    }
-}
-
-.skills {
-    max-width: 40em;
-    margin: 1em;
-    
-    h2 {
-        font-weight: bold;
-        line-height: 1em;
-    }
-
-    .skills-list {
-        display: block;
-        padding: 0;
-        margin: 0;
-        li {
-            display: inline-grid;
-            gap: .1em;
-            list-style: none;
-            background: black;
-            color: white;
-            padding: .2em .3em;
-            border-radius: .2em;
-            word-break: keep-all;
-        }
-    }
-}
 
 @media print {
     body {
