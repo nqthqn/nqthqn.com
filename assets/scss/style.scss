@@ -1,192 +1,164 @@
 :root {
-    --theme: #59f0aa;
-    --font1: 'Roboto', sans-serif;
-    --font2: Palatino, Garamond, Georgia, serif;
-    --color-purple: #ead5ff;
-    --color-aqua: #aff1e1;
-    --color-blue: #9ec2f0;
-    --color-pink: #ec8e91;
-    --color-green: #d5f2b8;
-    --container: 800px;
+  --container: 600px;
+  /* Theme */
+  --theme: #59f0aa;
+  --font1: 'Roboto', sans-serif;
+  --font2: Palatino, Garamond, Georgia, serif;
+  --color-purple: #ead5ff;
+  --color-aqua: #aff1e1;
+  --color-blue: #9ec2f0;
+  --color-pink: #ec8e91;
+  --color-green: #d5f2b8;
 }
 
 body {
-    font-family: var(--font1);
-    height: 100vh;
-    margin: 0px;
-    text-rendering: optimizeLegibility;
+  font-family: var(--font1);
+  margin: 0px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-rendering: optimizeLegibility;
 }
 
 header {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 50vh;
-    font-size: 2em;
-    line-height: 1.2em;
-    @media (max-width: 600px) {
-        font-size: 1.5em;
-    }
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  height: 100vh;
 
-    .logo {
-        width: 80px;
-        display: block;
-        background: none;
-    }
-    
-    @media (max-width: 600px) {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
+  .logo {
+    width: 80px;
+    display: block;
+    background: none;
+  }
 
-    p {
-        box-sizing: border-box;
-        padding: 10px;
-        max-width: var(--container);
-    }
+  p {
+    max-width: calc(var(--container) / 1.4);
+  }
 
-    em {
-        font-size: .5em;
-        color: #888;
-    }
-
-    strong {
-        font-family: var(--font2);
-    }
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 section {
-    background-color: rgb(242, 242, 242);
-    .inner {
-        max-width: var(--container);
-        margin: auto;
-        padding: 2em;
-        font-size: 1.5em;
-        line-height: 1.7em;
-    }
+  background-color: rgb(242, 242, 242);
+
+  .inner {
+    max-width: var(--container);
+    margin: auto;
+    padding: 1em;
+  }
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 
 .image {
-    max-width: 300px;
-    height: auto;
+  max-width: 300px;
+  height: auto;
 }
 
 blockquote {
-    border-left:#59f0aa solid;
-    margin-left: 1em;
-    padding-left: 1em;
-    padding: .1em .6em;
-    height: auto;
-    font-size: .7em;
-    line-height: 1.2em;
-    em {
-        font-size: .7em;
-        color: #888;
-    }
+  border-left: #59f0aa solid;
+  margin-left: 1em;
+  padding-left: 1em;
+  padding: .1em .6em;
+  height: auto;
+  line-height: 1.2em;
+
+  em {
+    color: #888;
+  }
 }
 
 a {
-    background:
-        linear-gradient(to bottom, var(--theme) 0%,
-            var(--theme) 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 4px 4px;
-    color: #000;
-    text-decoration: none;
-    transition: background-size .2s;
+  background:
+    linear-gradient(to bottom, var(--theme) 0%,
+      var(--theme) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #000;
+  text-decoration: none;
+  transition: background-size .2s;
 }
 
 a:hover {
-    background-size: 4px 50px;
+  background-size: 4px 50px;
 }
 
 .bg-purple {
-    background-color: var(--color-purple);
+  background-color: var(--color-purple);
 }
 
 .bg-aqua {
-    background-color: var(--color-aqua);
+  background-color: var(--color-aqua);
 }
 
 .bg-blue {
-    background-color: var(--color-blue);
+  background-color: var(--color-blue);
 }
 
 .bg-pink {
-    background-color: var(--color-pink);
+  background-color: var(--color-pink);
 }
 
 .bg-green {
-    background-color: var(--color-green);
+  background-color: var(--color-green);
 }
 
 /* Cool list! */
 ol {
-    padding-left: 4em
+  padding-left: 4em
 }
 
 ol li {
-    counter-increment: step-counter;
-    list-style-type: none;
-    position: relative;
+  counter-increment: step-counter;
+  list-style-type: none;
+  position: relative;
 }
 
 ol li:before {
-    content: counter(step-counter);
-    margin-right: 1em;
-    line-height: 1;
-    background-color: var(--theme);
-    box-shadow: .2em .2em 0 rgba(128, 128, 128, .2);
-    color: black;
-    padding: 2px 0;
-    width: 2em;
-    font-weight: bold;
-    height: 1.2em;
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-    margin-left: -67px;
-    margin-top: -3px;
-    top: 5px;
-    text-align: center;
-    font-size: .9em;
-    font-style: normal;
-    font-family: var(--font1);
-    font-variant-numeric: lining-nums;
-    -moz-font-feature-settings: lnum;
-    -webkit-font-feature-settings: "lnum";
-    font-feature-settings: "lnum";
+  content: counter(step-counter);
+  margin-right: 1em;
+  line-height: 1;
+  background-color: var(--theme);
+  box-shadow: .2em .2em 0 rgba(128, 128, 128, .2);
+  color: black;
+  padding: 2px 0;
+  width: 2em;
+  font-weight: bold;
+  height: 1.2em;
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  margin-left: -67px;
+  margin-top: -3px;
+  top: 5px;
+  text-align: center;
+  font-style: normal;
+  font-family: var(--font1);
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: lnum;
+  -webkit-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
 }
 
 li:nth-of-type(2n+2):before {
-    transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 
 li {
-    font-size: 1em;
-    text-align: left;
-    font-variant-ligatures: common-ligatures, contextual;
-    text-rendering: optimizeLegibility;
-    hanging-punctuation: first
+  text-align: left;
+  font-variant-ligatures: common-ligatures, contextual;
+  text-rendering: optimizeLegibility;
+  hanging-punctuation: first
 }
 
 li {
-    margin-bottom: .5em
-}
-
-
-@media print {
-    body {
-        font-size: 12px;
-    }
-    a[href^="/"] {
-        display: none;
-    }
+  margin-bottom: .5em
 }
